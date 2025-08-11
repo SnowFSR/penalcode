@@ -1,33 +1,30 @@
-{
-    "amendments": [
-      {
+[
+    {
         "number": 1,
         "right": "The right to freedom of speech."
-      },
-      {
+    },
+    {
         "number": 2,
         "right": "The right to bear arms."
-      },
-      {
+    },
+    {
         "number": 4,
         "right": "The right to be secure from all unreasonable searches and seizures of their person, houses, papers, and possessions."
-      },
-      {
+    },
+    {
         "number": 5,
         "right": "Protection against double jeopardy and against self-incrimination."
-      },
-      {
+    },
+    {
         "number": 6,
         "right": "The right to a public trial without unnecessary delay, to have a lawyer, to know the accusers, the nature of the charges, and the evidence."
-      },
-      {
+    },
+    {
         "number": 8,
         "right": "Protection against cruel and unusual punishment by the State."
-      },
-      {
+    },
+    {
         "number": 14,
         "right": "The right to equal protection by the laws of the State."
-      }
-    ]
-  }
-  
+    }
+]
