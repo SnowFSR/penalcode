@@ -1,4 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+// Penalcode.tsx
+import { useEffect, useMemo, useState } from "react";
+import type { ColumnDef } from "@tanstack/react-table";
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Text, DollarSign } from "lucide-react";
 import { DataTable } from "@/components/data-table/data-table";
@@ -7,88 +9,101 @@ import { DataTableSortList } from "@/components/data-table/data-table-sort-list"
 import { useDataTable } from "@/hooks/use-data-table";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 
-export default function Penalcode() {
-  const [data, setData] = useState<any[]>([]);
-  const [pageCount, setPageCount] = useState(1);
+type PenalRow = {
+  charge: string;
+  description: string;
+  time: number;
+  fine: number;
+};
 
-  const columns = useMemo(
-    () => [
-      {
-        id: "charge",
-        accessorKey: "charge",
-        header: ({ column }: any) => (
-          <DataTableColumnHeader column={column} title="Charge" />
-        ),
-        cell: ({ getValue }) => (
-            <div className="whitespace-normal break-words">{String(getValue() ?? "")}</div>
-        ),
-        meta: {
-          label: "Charge",
-          placeholder: "Search charges...",
-          variant: "text",
-          icon: Text,
-        },
-        enableColumnFilter: true,
+export default function Penalcode() {
+  const [data, setData] = useState<PenalRow[]>([]);
+
+  const columns = useMemo<ColumnDef<PenalRow, any>[]>(() => [
+    {
+      id: "charge",
+      accessorKey: "charge",
+      header: ({ column }: { column: any }) => (
+        <DataTableColumnHeader column={column} title="Charge" />
+      ),
+      cell: ({ getValue }: { getValue: () => unknown }) => (
+        <div className="whitespace-normal break-words">{String(getValue() ?? "")}</div>
+      ),
+      meta: {
+        label: "Charge",
+        placeholder: "Search charges...",
+        variant: "text" as const,   // 👈 literal
+        icon: Text,
       },
-      {
-        id: "description",
-        accessorKey: "description",
-        header: ({ column }: any) => (
-          <DataTableColumnHeader column={column} title="Description" />
-        ),
-        cell: ({ getValue }) => (
-            <div className="whitespace-normal break-words">{String(getValue() ?? "")}</div>
-        ),
-        meta: {
-          label: "Description",
-          placeholder: "Search descriptions...",
-          variant: "text",
-          icon: Text,
-        },
-        enableColumnFilter: true,
+      enableColumnFilter: true,
+    },
+    {
+      id: "description",
+      accessorKey: "description",
+      header: ({ column }: { column: any }) => (
+        <DataTableColumnHeader column={column} title="Description" />
+      ),
+      cell: ({ getValue }: { getValue: () => unknown }) => (
+        <div className="whitespace-normal break-words">{String(getValue() ?? "")}</div>
+      ),
+      meta: {
+        label: "Description",
+        placeholder: "Search descriptions...",
+        variant: "text" as const,   // 👈 literal
+        icon: Text,
       },
-      {
-        id: "time",
-        accessorKey: "time",
-        header: ({ column }) => (
-          <DataTableColumnHeader column={column} title="Time" />
-        ),
-        cell: ({ getValue }) => (
-          <div className="w-[5rem] text-center">{getValue()}</div>
-        ),
-        meta: { label: "Time", variant: "number", icon: Text, unit: 'm' },
+      enableColumnFilter: true,
+    },
+    {
+      id: "time",
+      accessorKey: "time",
+      header: ({ column }: { column: any }) => (
+        <DataTableColumnHeader column={column} title="Time" />
+      ),
+      cell: ({ getValue }: { getValue: () => unknown }) => (
+        <div className="w-[5rem] text-center">{String(getValue() ?? "")}</div>
+      ),
+      size: 80,
+      minSize: 64,
+      meta: {
+        label: "Time",
+        variant: "number" as const, // 👈 literal
+        icon: Text,
       },
-      {
-        id: "fine",
-        accessorKey: "fine",
-        header: ({ column }) => (
-          <DataTableColumnHeader column={column} title="Fine" />
-        ),
-        meta: { label: "Fine", variant: "number", unit: '$', icon: DollarSign },
+    },
+    {
+      id: "fine",
+      accessorKey: "fine",
+      header: ({ column }: { column: any }) => (
+        <DataTableColumnHeader column={column} title="Fine" />
+      ),
+      cell: ({ getValue }: { getValue: () => unknown }) => (
+        <div className="w-[6rem] text-right">{String(getValue() ?? "")}</div>
+      ),
+      size: 96,
+      minSize: 80,
+      meta: {
+        label: "Fine",
+        variant: "number" as const, // 👈 literal
+        icon: DollarSign,
       },
-    ],
-    []
-  );
+    },
+  ], []);
 
   useEffect(() => {
-    const url = `${import.meta.env.BASE_URL ?? '/'}data/penalcode.json`; // <-- key fix
-    fetch(url)
-      .then(r => {
+    fetch(`${import.meta.env.BASE_URL ?? '/'}data/penalcode.json`)
+      .then((r) => {
         if (!r.ok) throw new Error(`HTTP error! status: ${r.status}`);
         return r.json();
       })
-      .then(json => {
-        console.log('rows:', Array.isArray(json) ? json.length : 'not array');
-        console.log('first row keys:', json?.[0] && Object.keys(json[0]));
-        setData(Array.isArray(json) ? json : []);
-        setPageCount(Array.isArray(json) ? Math.max(1, Math.ceil(json.length / 10)) : 1);
-      })
-      .catch(e => console.error("Error loading JSON:", e));
+      .then((json: PenalRow[]) => setData(Array.isArray(json) ? json : []))
+      .catch((e) => console.error("Error loading JSON:", e));
   }, []);
 
-  const { table } = useDataTable({
+  const { table } = useDataTable<PenalRow>({
     data,
-    columns
+    columns,
+    // no pageCount -> client-side filtering/sorting/pagination
   });
 
   return (
