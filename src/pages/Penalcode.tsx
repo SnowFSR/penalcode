@@ -61,7 +61,7 @@ export default function Penalcode() {
         <DataTableColumnHeader column={column} title="Time" />
       ),
       cell: ({ getValue }: { getValue: () => unknown }) => (
-        <div className="w-[5rem] text-center">{String(getValue() ?? "")}</div>
+        <div className="w-[5rem]">{String(getValue() ?? "")}m</div>
       ),
       size: 80,
       minSize: 64,
@@ -78,7 +78,7 @@ export default function Penalcode() {
         <DataTableColumnHeader column={column} title="Fine" />
       ),
       cell: ({ getValue }: { getValue: () => unknown }) => (
-        <div className="w-[6rem] text-right">{String(getValue() ?? "")}</div>
+        <div className="w-[6rem]">${String(getValue() ?? "")}</div>
       ),
       size: 96,
       minSize: 80,
