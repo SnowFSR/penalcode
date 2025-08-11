@@ -1,0 +1,44 @@
+{
+    "legal_concepts": [
+        {
+            "name": "Burden of Proof",
+            "definition": "The burden of proof is to be beyond a reasonable doubt in criminal cases and a preponderance of the evidence in civil cases."
+        },
+        {
+            "name": "Citizen’s Arrests",
+            "definition": "All citizens of San Andreas are legally empowered to conduct a citizen's arrest when they witness a crime, there is risk to public safety, and they contact law enforcement."
+        },
+        {
+            "name": "Statute of Limitations",
+            "definition": "30 days for most civil and criminal charges. 14 days for appeals. Warrants are five days and do not extend statute of limitations."
+        },
+        {
+            "name": "BOLO",
+            "definition": "A BOLO provides reasonable suspicion for a stop. The trooper can invite the individual to attend a police station for questioning, and offer a lawyer. The individual may decline. A DA may then seek an Injunction to Appear."
+        },
+        {
+            "name": "Injunction to Appear",
+            "definition": "A court order, signed by a judge, that compels an individual to appear at a police station to listen to questions."
+        },
+        {
+            "name": "Brady Violation",
+            "definition": "Occurs when a prosecutor fails to provide a defendant with evidence that is favorable to their case. This is a violation of the defendant's constitutional rights."
+        },
+        {
+            "name": "Exigent Circumstances",
+            "definition": "Emergency Situations: If police hear indications of violence coming from a residence, they may enter without a warrant to ensure the safety of those inside.,\nImminent Destruction of Evidence: If police have reason to believe that evidence of a crime is about to be destroyed, they may enter a residence without a warrant to seize it.,\nHot Pursuit: If police are pursuing a suspect who enters a residence, they may enter without a warrant to apprehend the suspect."
+        },
+        {
+            "name": "Affirmative Defense",
+            "definition": "A legal strategy where the defendant admits to the facts of the case but argues that there are reasons why they should not be held liable/found guilty, even if those facts are proven. This shifts the burden of proof to the defendant to prove the affirmative defense. Common affirmative defenses include self-defense, duress, entrapment, and statute of limitations."
+        },
+        {
+            "name": "Reasonable Suspicion",
+            "definition": "When an officer has reason to believe someone might be involved in or have committed a crime. Allows officers to detain, investigate further, and ask questions. It’s not enough to arrest someone. Based on training and experience."
+        },
+        {
+            "name": "Probable Cause",
+            "definition": "The logical belief that a crime has been committed, supported by facts and evidence."
+        }
+    ]
+}
