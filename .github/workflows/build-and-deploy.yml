@@ -2,16 +2,15 @@ name: Build & Deploy
 
 on:
   workflow_dispatch:
- on:
-   push:
-     branches: ["main"]
+  push:
+    branches: ["main"]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: write 
 
     strategy:
       matrix:
@@ -19,23 +18,25 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
 
       - name: Install packages
-        run: npm i
+        run: npm ci
 
-      - name: Run npm build
+      - name: Build
         run: npm run build:gh
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: dist 
+          publish_dir: dist
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }}
