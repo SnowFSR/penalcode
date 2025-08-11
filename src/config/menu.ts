@@ -1,5 +1,8 @@
 import {
     Book,
+    Scale,
+    Gavel,
+    ScrollText,
     LucideIcon
 } from 'lucide-react'
 
@@ -14,18 +17,23 @@ type MenuType = MenuItemType[]
 
 export const mainMenu: MenuType = [
     {
-        title: 'Penalcode',
+        title: 'Penal Code',
         url: '/',
         icon: Book
     },
     {
-        title: 'Caselaw',
+        title: 'Case Law',
         url: '/caselaw',
-        icon: Book
+        icon: Gavel
     },
     {
-        title: 'Other',
-        url: '/other',
-        icon: Book
+        title: 'Amendments',
+        url: '/amendments',
+        icon: ScrollText
+    },
+    {
+        title: 'Legal Concepts',
+        url: '/concepts',
+        icon: Scale
     },
 ]

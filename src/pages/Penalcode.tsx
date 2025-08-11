@@ -27,7 +27,7 @@ export default function Penalcode() {
         <DataTableColumnHeader column={column} title="Charge" />
       ),
       cell: ({ getValue }: { getValue: () => unknown }) => (
-        <div className="whitespace-normal break-words">{String(getValue() ?? "")}</div>
+        <div className="whitespace-normal break-words w-[20rem]">{String(getValue() ?? "")}</div>
       ),
       meta: {
         label: "Charge",
@@ -44,7 +44,7 @@ export default function Penalcode() {
         <DataTableColumnHeader column={column} title="Description" />
       ),
       cell: ({ getValue }: { getValue: () => unknown }) => (
-        <div className="whitespace-normal break-words">{String(getValue() ?? "")}</div>
+        <div className="whitespace-normal break-words w-[40rem]">{String(getValue() ?? "")}</div>
       ),
       meta: {
         label: "Description",
@@ -109,7 +109,7 @@ export default function Penalcode() {
   return (
     <>
       <PageHeader>
-        <PageHeaderHeading>Penalcode</PageHeaderHeading>
+        <PageHeaderHeading>Penal Code</PageHeaderHeading>
       </PageHeader>
 
       <DataTable table={table}>

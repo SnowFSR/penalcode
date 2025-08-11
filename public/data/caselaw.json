@@ -1,49 +1,47 @@
-{
-    "cases": [
-      {
+[
+    {
         "name": "Miranda v. Arizona",
         "principle": "Statements made in response to direct questioning may not be used for or against you in trial unless you have been advised of your Fifth Amendment rights against self-incrimination. Law enforcement officers do not have to read your Miranda Rights if they do not have questions for you."
-      },
-      {
+    },
+    {
         "name": "Tennessee v. Garner",
         "principle": "A police officer may use deadly force to prevent the escape of a fleeing suspect if the officer has a good faith belief that the suspect poses a significant risk of death or injury to an officer or others."
-      },
-      {
+    },
+    {
         "name": "Terry v. Ohio",
         "principle": "Officers can do a pat down (NOT a full search) on a person they believe has committed, is committing, or is about to commit a crime, and has a reason to believe that the suspect may be armed and dangerous. If the officer finds contraband during a Terry frisk, and there is reasonable suspicion, the officer may seize that contraband without a warrant."
-      },
-      {
+    },
+    {
         "name": "Pennsylvania v. Mimms",
         "principle": "During a traffic stop police can order a driver and any passengers out at any time and pat them down for weapons under Terry stop conditions. Passengers are considered detained and may not leave until released."
-      },
-      {
+    },
+    {
         "name": "Wyoming v. Houghton",
         "principle": "An officer who has probable cause for a search may do so, especially when looking into objects or personal belongings capable of concealing items that are the object of the search. Includes plain-view doctrine."
-      },
-      {
+    },
+    {
         "name": "Carroll v. United States",
         "principle": "The warrantless search of a car does not violate the Constitution."
-      },
-      {
+    },
+    {
         "name": "Scott v. Harris",
         "principle": "An officer’s attempt to terminate a dangerous high-speed car chase that threatens the lives of innocent bystanders does not violate the Fourth Amendment, even when it places the fleeing motorist at risk of serious injury or death."
-      },
-      {
+    },
+    {
         "name": "Castle v. San Andreas",
         "principle": "Self-defense allows a defendant to use physical force to protect oneself from injury or death. Four elements are required: (1) in response to an unprovoked attack, (2) which threatens imminent injury or death, (3) the response must use an objectively reasonable degree of force, and (4) the defendant must report the defensive act to law enforcement as soon as it is safe to do so."
-      },
-      {
+    },
+    {
         "name": "Doegood v. San Andreas",
         "principle": "A person who renders emergency assistance to an individual may not be sued for their actions unless those actions are negligent."
-      },
-      {
+    },
+    {
         "name": "Rags v. San Andreas",
         "principle": "A park ranger who has a reasonable belief that a person has been engaged in regulated activities of hunting or fishing may search persons, containers, and proximate vehicles to inspect their catch or haul, anywhere in the state."
-      },
-      {
+    },
+    {
         "name": "The Grimmer Test",
         "principle": "Unprovoked flight and evasive behavior from police in a high crime area is enough to stop and question an individual, but these facts alone without any other justification are not enough for a Terry frisk. Additional facts must exist to believe the suspect is armed and dangerous before justifying a Terry frisk during detainment."
-      }
-    ]
-  }
-  
+    }
+]
+

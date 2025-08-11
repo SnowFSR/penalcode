@@ -105,7 +105,7 @@ export function useDataTable<TData>(props: UseDataTableProps<TData>) {
   const initialUrlKeys = React.useMemo(() => {
     const keys: Record<string, string | undefined> = {
       [PAGE_KEY]: "1",
-      [PER_PAGE_KEY]: String(initialState?.pagination?.pageSize ?? 10),
+      [PER_PAGE_KEY]: String(initialState?.pagination?.pageSize ?? 20),
       [SORT_KEY]:
         normalizedInitialSorting[0]
           ? `${normalizedInitialSorting[0].id}.${
