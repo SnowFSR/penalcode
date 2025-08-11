@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:gh": "tsc -b && cross-env VITE_BASE_URL=/penalcode/ VITE_USE_HASH_ROUTE=true vite build"
+    "build:gh": "tsc -b && cross-env VITE_BASE_URL=/ VITE_USE_HASH_ROUTE=true vite build"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
