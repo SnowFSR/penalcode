@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { ColumnDef } from "@tanstack/react-table";
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
-import { Text, DollarSign } from "lucide-react";
+import { Text } from "lucide-react";
 import { DataTable } from "@/components/data-table/data-table";
 import { DataTableToolbar } from "@/components/data-table/data-table-toolbar";
 import { DataTableSortList } from "@/components/data-table/data-table-sort-list";
@@ -68,10 +68,7 @@ export default function LegalConcepts() {
 
   const { table } = useDataTable<ConceptRow>({
     data,
-    columns,
-    initialStat: {
-        pagination: { pageSize: 10 },
-    }
+    columns
   });
 
   return (
