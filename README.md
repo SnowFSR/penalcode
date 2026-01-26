@@ -1,5 +1,5 @@
 # penalcode
-Penalcode website for Unscripted.gg
+Penalcode website for Umbrarp.net
 
 
 All rights reserved.

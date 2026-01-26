@@ -13,7 +13,7 @@ type AppConfigType = {
 export const appConfig: AppConfigType = {
     name: import.meta.env.VITE_APP_NAME ?? "Sample App",
     github: {
-        title: "Unscripted.gg Penal Code",
+        title: "Umbra Roleplay Penal Code",
         url: "https://github.com/SnowFSR/penalcode",
     },
     author: {
